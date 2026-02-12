@@ -1,85 +1,2057 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FreshBasket | Fruit E-Commerce</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav container">
-        <h1 class="logo">FreshBasket</h1>
-        <ul class="nav-links">
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#benefits">Why Us</a></li>
-          <li><a href="#deals">Deals</a></li>
-        </ul>
-        <button id="cart-button" aria-label="Open shopping cart">
-          🛒 Cart (<span id="cart-count">0</span>)
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0b2a1c" />
+  <meta name="format-detection" content="telephone=no,email=no,address=no" />
+
+  <title>Kurdistan — Tourism, History & Culture | Official-Style Showcase</title>
+  <meta name="description" content="A luxury, modern Kurdistan-focused tourism, history, and culture website concept featuring a cinematic hero video, curated highlights, immersive gallery, editorial blog/news, and a professional footer." />
+  <meta name="keywords" content="Kurdistan, tourism, culture, history, Erbil, Sulaymaniyah, Duhok, Akre, Lalish, mountains, travel" />
+  <meta name="author" content="Kurdistan Tourism & Culture Studio" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kurdistan — Tourism, History & Culture" />
+  <meta property="og:description" content="Cinematic tourism + culture experience: hero video, curated destinations, immersive gallery, and editorial news." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="images/og-kurdistan.jpg" />
+  <meta property="og:image:alt" content="Kurdistan luxury tourism cover image" />
+  <meta property="og:url" content="https://example.com/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kurdistan — Tourism, History & Culture" />
+  <meta name="twitter:description" content="Cinematic tourism + culture experience with curated destinations and editorial news." />
+  <meta name="twitter:image" content="images/og-kurdistan.jpg" />
+
+  <!-- Favicons (replace with your own) -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- Preconnect / Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <!-- GSAP (JS will use it later) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" referrerpolicy="no-referrer"></script>
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Site JS -->
+  <script defer src="js/script.js"></script>
+
+  <!-- Structured Data (Organization / Website) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kurdistan — Tourism, History & Culture",
+    "url": "https://example.com/",
+    "description": "A luxury, modern Kurdistan-focused tourism, history, and culture website concept.",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kurdistan Tourism & Culture Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/images/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- Structured Data (Breadcrumbs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Explore", "item": "https://example.com/#explore" },
+      { "@type": "ListItem", "position": 3, "name": "Gallery", "item": "https://example.com/#gallery" },
+      { "@type": "ListItem", "position": 4, "name": "News", "item": "https://example.com/#news" },
+      { "@type": "ListItem", "position": 5, "name": "Contact", "item": "https://example.com/#contact" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="theme-lux">
+  <!-- Accessibility: Skip link -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Decorative background layers (CSS will create luxury/glass effects) -->
+  <div class="bg-layers" aria-hidden="true">
+    <div class="bg-noise"></div>
+    <div class="bg-aurora"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- Top utility bar (subtle luxury tone) -->
+  <div class="topbar" role="region" aria-label="Site utilities">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="topbar__badge" aria-label="Curated cultural experience">
+          <i class="fa-solid fa-crown" aria-hidden="true"></i>
+          Curated Culture • Luxury Travel • Heritage
+        </span>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <span class="topbar__meta">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <span>Explore Cities, Mountains, and Sacred Places</span>
+        </span>
+      </div>
+
+      <div class="topbar__right">
+        <button class="icon-btn" id="openSearch" type="button" aria-label="Open site search" title="Search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         </button>
+
+        <button class="icon-btn" id="toggleTheme" type="button" aria-label="Toggle theme" title="Theme">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+
+        <a class="topbar__link" href="#contact" aria-label="Jump to contact section">
+          Contact
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="Go to homepage">
+        <span class="brand__mark" aria-hidden="true">
+          <span class="brand__ring"></span>
+          <span class="brand__monogram">K</span>
+        </span>
+        <span class="brand__text">
+          <span class="brand__title">Kurdistan</span>
+          <span class="brand__subtitle">Tourism • History • Culture</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav__link" href="#home" data-nav="home">
+          <span>Home</span>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </a>
+        <a class="nav__link" href="#about" data-nav="about">
+          <span>About</span>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </a>
+        <a class="nav__link" href="#explore" data-nav="explore">
+          <span>Explore</span>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </a>
+        <a class="nav__link" href="#gallery" data-nav="gallery">
+          <span>Gallery</span>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </a>
+        <a class="nav__link" href="#news" data-nav="news">
+          <span>Blog / News</span>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </a>
+        <a class="nav__link" href="#contact" data-nav="contact">
+          <span>Contact</span>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </a>
       </nav>
 
-      <section class="hero container">
-        <div>
-          <p class="tag">Farm-fresh delivery in 24 hours</p>
-          <h2>Juicy fruits from trusted growers, delivered to your door.</h2>
-          <p>
-            Shop handpicked apples, mangoes, berries, citrus, and tropical favorites.
-          </p>
-          <a class="cta" href="#shop">Shop Fruits</a>
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=900&q=80"
-          alt="Assorted fresh fruits"
-        />
-      </section>
-    </header>
+      <div class="header__actions">
+        <button class="pill-btn" id="openWeatherPanel" type="button" aria-label="Open weather widget" title="Weather">
+          <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+          <span class="pill-btn__text">Weather</span>
+          <span class="pill-btn__dot" aria-hidden="true"></span>
+        </button>
 
-    <main>
-      <section id="benefits" class="benefits container">
-        <article>
-          <h3>100% Fresh Guarantee</h3>
-          <p>Picked at peak ripeness and quality-checked before shipping.</p>
-        </article>
-        <article>
-          <h3>Eco-Friendly Packaging</h3>
-          <p>Plastic-free boxes and insulated wraps for sustainable delivery.</p>
-        </article>
-        <article>
-          <h3>Flexible Subscriptions</h3>
-          <p>Weekly or monthly fruit boxes tailored to your taste.</p>
-        </article>
-      </section>
+        <button class="pill-btn" id="openPlanner" type="button" aria-label="Open trip planner" title="Trip Planner">
+          <i class="fa-solid fa-route" aria-hidden="true"></i>
+          <span class="pill-btn__text">Plan</span>
+        </button>
 
-      <section id="shop" class="container">
-        <div class="section-title">
-          <h2>Top Fruits</h2>
-          <p>Popular picks this week.</p>
-        </div>
-        <div id="product-grid" class="product-grid"></div>
-      </section>
-
-      <section id="deals" class="deals container">
-        <h2>Today’s Deal</h2>
-        <p>Get 15% off orders over $40 with code <strong>FRUIT15</strong>.</p>
-      </section>
-    </main>
-
-    <aside id="cart-panel" class="cart-panel" aria-live="polite">
-      <div class="cart-header">
-        <h2>Your Cart</h2>
-        <button id="close-cart" aria-label="Close cart">✕</button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="nav-toggle__lines" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
       </div>
-      <ul id="cart-items"></ul>
-      <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
-      <button class="checkout">Checkout</button>
-    </aside>
+    </div>
 
-    <footer>
-      <p>© 2026 FreshBasket. Sweetness delivered daily.</p>
-    </footer>
+    <!-- Mobile navigation panel -->
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="mobile-nav__inner">
+        <div class="mobile-nav__top">
+          <span class="mobile-nav__label">Menu</span>
+          <button class="icon-btn" id="navClose" type="button" aria-label="Close menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
 
-    <script src="script.js"></script>
-  </body>
+        <div class="mobile-nav__links" role="navigation" aria-label="Mobile navigation links">
+          <a class="mobile-nav__link" href="#home" data-nav="home">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Home</span>
+          </a>
+          <a class="mobile-nav__link" href="#about" data-nav="about">
+            <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+            <span>About</span>
+          </a>
+          <a class="mobile-nav__link" href="#explore" data-nav="explore">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <span>Explore</span>
+          </a>
+          <a class="mobile-nav__link" href="#gallery" data-nav="gallery">
+            <i class="fa-solid fa-images" aria-hidden="true"></i>
+            <span>Gallery</span>
+          </a>
+          <a class="mobile-nav__link" href="#news" data-nav="news">
+            <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+            <span>Blog / News</span>
+          </a>
+          <a class="mobile-nav__link" href="#contact" data-nav="contact">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <div class="mobile-nav__cta">
+          <button class="cta-btn cta-btn--gold" type="button" data-action="openPlanner">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            <span>Build a 3-Day Itinerary</span>
+          </button>
+          <button class="cta-btn cta-btn--glass" type="button" data-action="openWeatherPanel">
+            <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
+            <span>Check City Weather</span>
+          </button>
+        </div>
+
+        <div class="mobile-nav__fineprint">
+          <p>
+            This is a premium front-end concept. Replace media assets in <code>images/</code> and <code>video/</code> with your own licensed files.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Overlay (JS will open/close) -->
+  <div class="overlay overlay--search" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Site search" hidden>
+    <div class="overlay__backdrop" data-overlay-close></div>
+    <div class="overlay__panel" role="document">
+      <div class="overlay__header">
+        <h2 class="overlay__title">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          Search the Experience
+        </h2>
+        <button class="icon-btn" type="button" aria-label="Close search" data-overlay-close>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <form class="search" id="searchForm" autocomplete="off">
+        <label class="sr-only" for="searchInput">Search</label>
+        <input
+          class="search__input"
+          id="searchInput"
+          name="q"
+          type="search"
+          placeholder="Try: Erbil Citadel, Akre, Lalish, mountains, cuisine, festivals..."
+          aria-describedby="searchHelp"
+        />
+        <button class="search__btn" type="submit" aria-label="Submit search">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </form>
+
+      <p class="search__help" id="searchHelp">
+        Tip: Use keywords like <strong>history</strong>, <strong>culture</strong>, <strong>nature</strong>, <strong>cities</strong>, <strong>food</strong>, or <strong>events</strong>.
+      </p>
+
+      <div class="search__suggestions" aria-label="Suggested searches">
+        <button class="chip" type="button" data-search="Erbil Citadel">
+          <i class="fa-solid fa-chess-rook" aria-hidden="true"></i>
+          Erbil Citadel
+        </button>
+        <button class="chip" type="button" data-search="Akre">
+          <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
+          Akre
+        </button>
+        <button class="chip" type="button" data-search="Lalish">
+          <i class="fa-solid fa-place-of-worship" aria-hidden="true"></i>
+          Lalish
+        </button>
+        <button class="chip" type="button" data-search="Cuisine">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          Cuisine
+        </button>
+        <button class="chip" type="button" data-search="Festivals">
+          <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+          Festivals
+        </button>
+        <button class="chip" type="button" data-search="Hiking trails">
+          <i class="fa-solid fa-person-hiking" aria-hidden="true"></i>
+          Hiking Trails
+        </button>
+      </div>
+
+      <div class="search__results" id="searchResults" aria-live="polite">
+        <!-- JS will render filtered anchors/cards here -->
+        <div class="search__empty">
+          <i class="fa-regular fa-compass" aria-hidden="true"></i>
+          <p>Start typing to discover sections, featured destinations, and articles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weather Panel Overlay (JS-driven) -->
+  <div class="overlay overlay--weather" id="weatherOverlay" role="dialog" aria-modal="true" aria-label="Weather widget" hidden>
+    <div class="overlay__backdrop" data-overlay-close></div>
+    <div class="overlay__panel overlay__panel--wide" role="document">
+      <div class="overlay__header">
+        <h2 class="overlay__title">
+          <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+          Live Weather — Kurdish Cities
+        </h2>
+        <button class="icon-btn" type="button" aria-label="Close weather" data-overlay-close>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="weather" id="weatherWidget" data-widget="weather">
+        <div class="weather__intro">
+          <p class="weather__lead">
+            Pick a city and get a clean, luxury-styled snapshot: temperature, wind, humidity, and a refined forecast preview.
+          </p>
+          <p class="weather__note">
+            This UI is ready for a JS integration (e.g., Open-Meteo or other provider). Your upcoming <code>script.js</code> will handle fetch, caching, and UI updates.
+          </p>
+        </div>
+
+        <div class="weather__controls" role="group" aria-label="Select city and units">
+          <div class="field">
+            <label class="field__label" for="weatherCity">City</label>
+            <select class="field__select" id="weatherCity" name="city" aria-label="Select a Kurdish city">
+              <option value="erbil" selected>Erbil (Hewlêr)</option>
+              <option value="sulaymaniyah">Sulaymaniyah (Silêmanî)</option>
+              <option value="duhok">Duhok (Dihok)</option>
+              <option value="halabja">Halabja (Helebce)</option>
+              <option value="akre">Akre (Akrê)</option>
+              <option value="zakho">Zakho (Zaxo)</option>
+              <option value="rawanduz">Rawanduz (Rewandiz)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <span class="field__label">Units</span>
+            <div class="segmented" role="radiogroup" aria-label="Units">
+              <label class="segmented__item">
+                <input type="radio" name="units" value="metric" checked />
+                <span>Metric</span>
+              </label>
+              <label class="segmented__item">
+                <input type="radio" name="units" value="imperial" />
+                <span>Imperial</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field field--actions">
+            <button class="cta-btn cta-btn--gold" id="weatherRefresh" type="button" aria-label="Refresh weather">
+              <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+              <span>Refresh</span>
+            </button>
+            <button class="cta-btn cta-btn--glass" id="weatherUseLocation" type="button" aria-label="Use my location (if available)">
+              <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
+              <span>Use My Location</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="weather__grid" aria-label="Weather display">
+          <section class="weather-card reveal" data-reveal="fade-up" aria-label="Current conditions">
+            <header class="weather-card__header">
+              <h3 class="weather-card__title">Current</h3>
+              <span class="weather-card__status" id="weatherStatus" aria-live="polite">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                Waiting for update…
+              </span>
+            </header>
+
+            <div class="weather-now">
+              <div class="weather-now__icon" id="weatherIcon" aria-hidden="true">
+                <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+              </div>
+              <div class="weather-now__meta">
+                <p class="weather-now__temp">
+                  <span class="weather-now__value" id="weatherTemp">--</span>
+                  <span class="weather-now__unit" id="weatherTempUnit">°C</span>
+                </p>
+                <p class="weather-now__desc" id="weatherDesc">—</p>
+                <p class="weather-now__city" id="weatherCityLabel">Erbil (Hewlêr)</p>
+              </div>
+            </div>
+
+            <dl class="weather-stats">
+              <div class="weather-stats__item">
+                <dt><i class="fa-solid fa-wind" aria-hidden="true"></i> Wind</dt>
+                <dd id="weatherWind">--</dd>
+              </div>
+              <div class="weather-stats__item">
+                <dt><i class="fa-solid fa-droplet" aria-hidden="true"></i> Humidity</dt>
+                <dd id="weatherHumidity">--</dd>
+              </div>
+              <div class="weather-stats__item">
+                <dt><i class="fa-solid fa-gauge" aria-hidden="true"></i> Pressure</dt>
+                <dd id="weatherPressure">--</dd>
+              </div>
+              <div class="weather-stats__item">
+                <dt><i class="fa-solid fa-sun" aria-hidden="true"></i> UV</dt>
+                <dd id="weatherUV">--</dd>
+              </div>
+            </dl>
+
+            <footer class="weather-card__footer">
+              <small class="muted">
+                Pro tip: Your JS can cache responses per-city to reduce API calls and keep the UI instant.
+              </small>
+            </footer>
+          </section>
+
+          <section class="weather-card reveal" data-reveal="fade-up" aria-label="Forecast preview">
+            <header class="weather-card__header">
+              <h3 class="weather-card__title">Forecast</h3>
+              <span class="weather-card__status" id="forecastStatus" aria-live="polite">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                Preview pending…
+              </span>
+            </header>
+
+            <div class="forecast" id="forecastList" aria-label="Forecast items">
+              <!-- JS will generate forecast rows/cards -->
+              <div class="forecast__placeholder" aria-hidden="true">
+                <div class="forecast__row skeleton"></div>
+                <div class="forecast__row skeleton"></div>
+                <div class="forecast__row skeleton"></div>
+                <div class="forecast__row skeleton"></div>
+                <div class="forecast__row skeleton"></div>
+              </div>
+            </div>
+
+            <footer class="weather-card__footer">
+              <small class="muted">
+                Forecast layout is designed for both daily and hourly modes—your JS can switch based on viewport or user preference.
+              </small>
+            </footer>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Planner Overlay (front-end concept; JS later) -->
+  <div class="overlay overlay--planner" id="plannerOverlay" role="dialog" aria-modal="true" aria-label="Trip planner" hidden>
+    <div class="overlay__backdrop" data-overlay-close></div>
+    <div class="overlay__panel overlay__panel--wide" role="document">
+      <div class="overlay__header">
+        <h2 class="overlay__title">
+          <i class="fa-solid fa-route" aria-hidden="true"></i>
+          Luxury Itinerary Builder
+        </h2>
+        <button class="icon-btn" type="button" aria-label="Close planner" data-overlay-close>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="planner" id="planner" aria-label="Trip planning form">
+        <div class="planner__intro">
+          <p class="planner__lead">
+            Craft a refined itinerary in seconds: choose your interests, trip length, and travel pace. The upcoming JS will generate a personalized plan and allow export.
+          </p>
+          <p class="planner__note">
+            This is a front-end scaffold—your <code>script.js</code> will power smart suggestions, sliders, and a printable itinerary view.
+          </p>
+        </div>
+
+        <form class="planner__form" id="plannerForm">
+          <div class="planner__grid">
+            <div class="field">
+              <label class="field__label" for="tripCity">Base City</label>
+              <select class="field__select" id="tripCity" name="tripCity">
+                <option value="erbil" selected>Erbil (Hewlêr)</option>
+                <option value="sulaymaniyah">Sulaymaniyah (Silêmanî)</option>
+                <option value="duhok">Duhok (Dihok)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="tripDays">Trip Length</label>
+              <select class="field__select" id="tripDays" name="tripDays">
+                <option value="2">2 Days</option>
+                <option value="3" selected>3 Days</option>
+                <option value="5">5 Days</option>
+                <option value="7">7 Days</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="tripPace">Pace</label>
+              <select class="field__select" id="tripPace" name="tripPace">
+                <option value="slow">Slow & Scenic</option>
+                <option value="balanced" selected>Balanced</option>
+                <option value="fast">Fast & Intensive</option>
+              </select>
+            </div>
+
+            <div class="field field--full">
+              <span class="field__label">Interests</span>
+              <div class="checks" role="group" aria-label="Trip interests">
+                <label class="check">
+                  <input type="checkbox" name="interest" value="history" checked />
+                  <span><i class="fa-solid fa-landmark" aria-hidden="true"></i> History & Heritage</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="culture" checked />
+                  <span><i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Culture & Arts</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="nature" checked />
+                  <span><i class="fa-solid fa-mountain" aria-hidden="true"></i> Nature & Mountains</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="food" checked />
+                  <span><i class="fa-solid fa-utensils" aria-hidden="true"></i> Cuisine & Markets</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="family" />
+                  <span><i class="fa-solid fa-children" aria-hidden="true"></i> Family-Friendly</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="adventure" />
+                  <span><i class="fa-solid fa-person-hiking" aria-hidden="true"></i> Adventure</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <label class="field__label" for="tripNotes">Notes</label>
+              <textarea class="field__textarea" id="tripNotes" name="tripNotes" rows="4" placeholder="Example: prefer boutique hotels, sunrise photography, cultural performances, easy hikes..."></textarea>
+            </div>
+          </div>
+
+          <div class="planner__actions">
+            <button class="cta-btn cta-btn--gold" type="submit">
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+              <span>Generate Itinerary</span>
+            </button>
+            <button class="cta-btn cta-btn--glass" id="plannerReset" type="reset">
+              <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+              <span>Reset</span>
+            </button>
+          </div>
+        </form>
+
+        <section class="planner__output reveal" data-reveal="fade-up" aria-label="Generated itinerary">
+          <header class="planner__output-header">
+            <h3 class="planner__output-title">Your Itinerary Preview</h3>
+            <div class="planner__output-tools">
+              <button class="icon-btn" id="itineraryCopy" type="button" aria-label="Copy itinerary">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" id="itineraryPrint" type="button" aria-label="Print itinerary">
+                <i class="fa-solid fa-print" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" id="itineraryDownload" type="button" aria-label="Download itinerary">
+                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </header>
+
+          <div class="itinerary" id="itinerary">
+            <!-- JS will render day-by-day timeline cards here -->
+            <div class="itinerary__empty">
+              <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+              <p>Generate an itinerary to see a premium day-by-day plan with time blocks, highlights, and travel notes.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero__media" aria-hidden="true">
+        <video
+          class="hero__video"
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="images/hero-poster.jpg"
+        >
+          <!-- Replace these with your own files -->
+          <source src="video/kurdistan-hero.mp4" type="video/mp4" />
+          <source src="video/kurdistan-hero.webm" type="video/webm" />
+        </video>
+
+        <div class="hero__scrim"></div>
+        <div class="hero__ornaments">
+          <div class="hero__glow hero__glow--gold"></div>
+          <div class="hero__glow hero__glow--red"></div>
+          <div class="hero__glow hero__glow--green"></div>
+        </div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__kicker reveal" data-reveal="fade-down">
+            <span class="kicker__line"></span>
+            Luxury Travel & Cultural Heritage
+          </p>
+
+          <h1 class="hero__title reveal" data-reveal="fade-up">
+            Discover Kurdistan
+            <span class="hero__title-accent">Where Mountains Meet Civilization</span>
+          </h1>
+
+          <p class="hero__subtitle reveal" data-reveal="fade-up" data-delay="0.08">
+            From ancient citadels and sacred sanctuaries to alpine valleys and vibrant bazaars—experience an elegant, modern showcase of tourism, history, and culture.
+          </p>
+
+          <div class="hero__cta reveal" data-reveal="fade-up" data-delay="0.14">
+            <a class="cta-btn cta-btn--gold" href="#explore">
+              <i class="fa-solid fa-compass" aria-hidden="true"></i>
+              <span>Explore Destinations</span>
+            </a>
+            <a class="cta-btn cta-btn--glass" href="#gallery">
+              <i class="fa-regular fa-images" aria-hidden="true"></i>
+              <span>View Gallery</span>
+            </a>
+            <button class="cta-btn cta-btn--outline" type="button" id="heroPlayToggle" aria-label="Pause or play hero video">
+              <i class="fa-solid fa-pause" aria-hidden="true"></i>
+              <span>Pause Video</span>
+            </button>
+          </div>
+
+          <div class="hero__stats reveal" data-reveal="fade-up" data-delay="0.20" aria-label="Highlights">
+            <div class="stat-card">
+              <div class="stat-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-mountain-sun"></i>
+              </div>
+              <div class="stat-card__meta">
+                <p class="stat-card__value">Alpine</p>
+                <p class="stat-card__label">Landscapes & Valleys</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-chess-rook"></i>
+              </div>
+              <div class="stat-card__meta">
+                <p class="stat-card__value">Ancient</p>
+                <p class="stat-card__label">Heritage & Citadels</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-masks-theater"></i>
+              </div>
+              <div class="stat-card__meta">
+                <p class="stat-card__value">Living</p>
+                <p class="stat-card__label">Culture & Arts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__panel reveal" data-reveal="fade-left" aria-label="Quick actions and featured city">
+          <div class="glass-card hero-panel">
+            <header class="hero-panel__header">
+              <h2 class="hero-panel__title">Featured Today</h2>
+              <span class="hero-panel__badge" aria-label="Editor’s pick">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                Editor’s Pick
+              </span>
+            </header>
+
+            <div class="hero-panel__body">
+              <div class="featured-city" data-city="erbil">
+                <div class="featured-city__thumb" aria-hidden="true">
+                  <img src="images/featured-erbil.jpg" alt="" loading="lazy" />
+                  <div class="featured-city__overlay"></div>
+                </div>
+                <div class="featured-city__content">
+                  <h3 class="featured-city__name">Erbil (Hewlêr)</h3>
+                  <p class="featured-city__desc">
+                    A refined blend of ancient heritage and modern energy—markets, museums, and iconic architecture in a vibrant urban heart.
+                  </p>
+                  <div class="featured-city__actions">
+                    <a class="mini-link" href="#explore" data-scroll-to="explore">
+                      Discover highlights
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <button class="mini-link" type="button" data-action="openWeatherPanel">
+                      Check weather
+                      <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-panel__divider" aria-hidden="true"></div>
+
+              <div class="quick-actions" aria-label="Quick actions">
+                <button class="quick-actions__btn" type="button" data-action="openPlanner">
+                  <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                  <span>Itinerary</span>
+                </button>
+                <a class="quick-actions__btn" href="#news">
+                  <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+                  <span>News</span>
+                </a>
+                <a class="quick-actions__btn" href="#contact">
+                  <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+
+            <footer class="hero-panel__footer">
+              <small class="muted">
+                Tip: Scroll to reveal cinematic sections and interactive galleries.
+              </small>
+            </footer>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="scroll-indicator">
+          <span class="scroll-indicator__dot"></span>
+        </div>
+        <span class="scroll-indicator__text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--about" id="about" aria-label="About Kurdistan">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal="fade-up">
+            <span class="eyebrow__line"></span>
+            About Kurdistan
+          </p>
+          <h2 class="section__title reveal" data-reveal="fade-up" data-delay="0.06">
+            A Heritage of Resilience, Hospitality, and Artistry
+          </h2>
+          <p class="section__subtitle reveal" data-reveal="fade-up" data-delay="0.10">
+            This concept site presents a premium narrative: history, culture, landscapes, and curated travel experiences—designed with luxury aesthetics, glassmorphism, and cinematic motion.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <article class="about-card glass-card reveal" data-reveal="fade-up" aria-label="History">
+            <header class="about-card__header">
+              <div class="about-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-scroll"></i>
+              </div>
+              <h3 class="about-card__title">History</h3>
+            </header>
+            <p class="about-card__text">
+              Kurdistan’s story spans ancient settlements, trade routes, fortifications, and cultural crossroads. This section is structured for editorial expansion:
+              timelines, curated highlights, and multimedia artifacts—crafted for readability and modern, immersive presentation.
+            </p>
+            <ul class="about-card__list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Timeline-ready layout for historical eras</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Museum and heritage spotlight blocks</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Quote panels for oral history and literature</li>
+            </ul>
+          </article>
+
+          <article class="about-card glass-card reveal" data-reveal="fade-up" data-delay="0.06" aria-label="Culture">
+            <header class="about-card__header">
+              <div class="about-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-masks-theater"></i>
+              </div>
+              <h3 class="about-card__title">Culture</h3>
+            </header>
+            <p class="about-card__text">
+              Music, dance, textiles, cuisine, and festivals form a living identity. The layout anticipates interactive features:
+              audio previews, festival calendars, artisan profiles, and modern cultural hubs—styled with elegant depth and motion.
+            </p>
+            <ul class="about-card__list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Festival highlights with visual storytelling</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Artisan cards for crafts, fashion, and design</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Curated cuisine guides and market routes</li>
+            </ul>
+          </article>
+
+          <article class="about-card glass-card reveal" data-reveal="fade-up" data-delay="0.12" aria-label="Tourism">
+            <header class="about-card__header">
+              <div class="about-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-route"></i>
+              </div>
+              <h3 class="about-card__title">Tourism</h3>
+            </header>
+            <p class="about-card__text">
+              From mountain panoramas to city night markets, tourism here is curated with a luxury sensibility:
+              clear itineraries, editorial highlights, and modern travel tools. The upcoming JS will power smart planning and sliders.
+            </p>
+            <ul class="about-card__list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Itinerary builder + export-ready output</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Seasonal recommendations with weather context</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Gallery-led exploration for destinations</li>
+            </ul>
+          </article>
+
+          <aside class="about-feature reveal" data-reveal="fade-left" aria-label="Signature statement">
+            <div class="glass-card about-feature__card">
+              <h3 class="about-feature__title">Signature Experience</h3>
+              <p class="about-feature__text">
+                A premium front-end foundation with cinematic hero video, layered glass effects, and scroll-triggered reveals—
+                designed to scale into a large site with structured content, editorial storytelling, and interactive travel tools.
+              </p>
+
+              <div class="about-feature__highlights" aria-label="Highlights">
+                <div class="pill">
+                  <i class="fa-solid fa-gem" aria-hidden="true"></i>
+                  <span>Luxury Palette</span>
+                </div>
+                <div class="pill">
+                  <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                  <span>Motion Design</span>
+                </div>
+                <div class="pill">
+                  <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+                  <span>Accessible UI</span>
+                </div>
+                <div class="pill">
+                  <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+                  <span>Responsive</span>
+                </div>
+              </div>
+
+              <div class="about-feature__cta">
+                <a class="mini-cta" href="#explore">
+                  Start exploring
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Timeline teaser -->
+        <section class="timeline reveal" data-reveal="fade-up" aria-label="Historical snapshot timeline">
+          <header class="timeline__header">
+            <h3 class="timeline__title">Historical Snapshot</h3>
+            <p class="timeline__subtitle">
+              Designed for future expansion: interactive eras, curated artifacts, and modern editorial reading experience.
+            </p>
+          </header>
+
+          <ol class="timeline__list">
+            <li class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <p class="timeline__label">Ancient Settlements</p>
+                <p class="timeline__text">Early cultural layers and regional crossroads—ready for deeper content modules and maps.</p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <p class="timeline__label">Heritage & Citadels</p>
+                <p class="timeline__text">Architectural icons and urban heritage—structured for galleries, audio guides, and stories.</p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <p class="timeline__label">Living Culture</p>
+                <p class="timeline__text">Music, dance, cuisine, and artisan craft—ready for multimedia, event calendars, and profiles.</p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <p class="timeline__label">Modern Tourism</p>
+                <p class="timeline__text">Boutique experiences, curated routes, and seasonal travel planning—powered by upcoming JS.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </section>
+
+    <!-- EXPLORE (Destinations + Slider scaffold) -->
+    <section class="section section--explore" id="explore" aria-label="Explore destinations">
+      <div class="container">
+        <header class="section__header section__header--split">
+          <div class="section__header-left">
+            <p class="section__eyebrow reveal" data-reveal="fade-up">
+              <span class="eyebrow__line"></span>
+              Explore
+            </p>
+            <h2 class="section__title reveal" data-reveal="fade-up" data-delay="0.06">
+              Destinations Curated for Wonder
+            </h2>
+          </div>
+          <div class="section__header-right reveal" data-reveal="fade-up" data-delay="0.10">
+            <p class="section__subtitle">
+              Browse city icons, mountain escapes, and sacred heritage with a premium slider experience. Your JS will power drag, inertia, and keyboard-friendly navigation.
+            </p>
+          </div>
+        </header>
+
+        <div class="explore">
+          <div class="explore__toolbar reveal" data-reveal="fade-up" aria-label="Explore filters and controls">
+            <div class="explore__filters" role="group" aria-label="Destination filters">
+              <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                <span>All</span>
+              </button>
+              <button class="filter-btn" type="button" data-filter="city" aria-pressed="false">
+                <i class="fa-solid fa-city" aria-hidden="true"></i>
+                <span>Cities</span>
+              </button>
+              <button class="filter-btn" type="button" data-filter="nature" aria-pressed="false">
+                <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+                <span>Nature</span>
+              </button>
+              <button class="filter-btn" type="button" data-filter="heritage" aria-pressed="false">
+                <i class="fa-solid fa-landmark-dome" aria-hidden="true"></i>
+                <span>Heritage</span>
+              </button>
+              <button class="filter-btn" type="button" data-filter="culture" aria-pressed="false">
+                <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+                <span>Culture</span>
+              </button>
+            </div>
+
+            <div class="explore__controls" aria-label="Slider controls">
+              <button class="icon-btn icon-btn--ring" type="button" data-slider="prev" aria-label="Previous destination">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn icon-btn--ring" type="button" data-slider="next" aria-label="Next destination">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Slider Track (JS will make this interactive) -->
+          <div class="slider reveal" data-reveal="fade-up" data-slider="destinations" aria-label="Destination slider">
+            <div class="slider__viewport" tabindex="0" aria-label="Scrollable destination items" role="group">
+              <div class="slider__track">
+                <!-- Slide 1 -->
+                <article class="slide destination" data-category="city heritage" data-title="Erbil Citadel" tabindex="-1">
+                  <div class="destination__media" aria-hidden="true">
+                    <img src="images/dest-erbil.jpg" alt="" loading="lazy" />
+                    <div class="destination__shade"></div>
+                    <div class="destination__badge">
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      Iconic
+                    </div>
+                  </div>
+                  <div class="destination__content">
+                    <h3 class="destination__title">Erbil Citadel</h3>
+                    <p class="destination__desc">
+                      A heritage centerpiece—ideal for sunrise walks, cultural museums, and curated market routes.
+                    </p>
+                    <dl class="destination__meta">
+                      <div>
+                        <dt><i class="fa-solid fa-camera-retro" aria-hidden="true"></i> Best For</dt>
+                        <dd>Photography, museums, bazaars</dd>
+                      </div>
+                      <div>
+                        <dt><i class="fa-solid fa-clock" aria-hidden="true"></i> Suggested</dt>
+                        <dd>2–4 hours</dd>
+                      </div>
+                    </dl>
+                    <div class="destination__actions">
+                      <a class="mini-cta" href="#gallery" data-scroll-to="gallery">
+                        View gallery
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                      <button class="mini-cta mini-cta--ghost" type="button" data-action="openPlanner">
+                        Add to plan
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="slide destination" data-category="city culture" data-title="Sulaymaniyah" tabindex="-1">
+                  <div class="destination__media" aria-hidden="true">
+                    <img src="images/dest-sulaymaniyah.jpg" alt="" loading="lazy" />
+                    <div class="destination__shade"></div>
+                    <div class="destination__badge destination__badge--gold">
+                      <i class="fa-solid fa-gem" aria-hidden="true"></i>
+                      Refined
+                    </div>
+                  </div>
+                  <div class="destination__content">
+                    <h3 class="destination__title">Sulaymaniyah</h3>
+                    <p class="destination__desc">
+                      A cultural hub—literature, galleries, cafés, and modern city life framed by mountain horizons.
+                    </p>
+                    <dl class="destination__meta">
+                      <div>
+                        <dt><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Best For</dt>
+                        <dd>City culture, cafés, art spaces</dd>
+                      </div>
+                      <div>
+                        <dt><i class="fa-solid fa-sun" aria-hidden="true"></i> Vibe</dt>
+                        <dd>Modern & artistic</dd>
+                      </div>
+                    </dl>
+                    <div class="destination__actions">
+                      <a class="mini-cta" href="#news" data-scroll-to="news">
+                        Read stories
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                      <button class="mini-cta mini-cta--ghost" type="button" data-action="openWeatherPanel">
+                        Check weather
+                        <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Slide 3 -->
+                <article class="slide destination" data-category="nature" data-title="Rawanduz" tabindex="-1">
+                  <div class="destination__media" aria-hidden="true">
+                    <img src="images/dest-rawanduz.jpg" alt="" loading="lazy" />
+                    <div class="destination__shade"></div>
+                    <div class="destination__badge destination__badge--green">
+                      <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+                      Alpine
+                    </div>
+                  </div>
+                  <div class="destination__content">
+                    <h3 class="destination__title">Rawanduz</h3>
+                    <p class="destination__desc">
+                      Dramatic valleys and mountain routes—built for scenic drives, viewpoints, and unforgettable air.
+                    </p>
+                    <dl class="destination__meta">
+                      <div>
+                        <dt><i class="fa-solid fa-person-hiking" aria-hidden="true"></i> Best For</dt>
+                        <dd>Hikes, overlooks, nature trails</dd>
+                      </div>
+                      <div>
+                        <dt><i class="fa-solid fa-road" aria-hidden="true"></i> Ideal</dt>
+                        <dd>Day trips and weekends</dd>
+                      </div>
+                    </dl>
+                    <div class="destination__actions">
+                      <a class="mini-cta" href="#gallery" data-scroll-to="gallery">
+                        See scenes
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                      <button class="mini-cta mini-cta--ghost" type="button" data-action="openPlanner">
+                        Add to plan
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Slide 4 -->
+                <article class="slide destination" data-category="heritage culture" data-title="Lalish" tabindex="-1">
+                  <div class="destination__media" aria-hidden="true">
+                    <img src="images/dest-lalish.jpg" alt="" loading="lazy" />
+                    <div class="destination__shade"></div>
+                    <div class="destination__badge destination__badge--red">
+                      <i class="fa-solid fa-place-of-worship" aria-hidden="true"></i>
+                      Sacred
+                    </div>
+                  </div>
+                  <div class="destination__content">
+                    <h3 class="destination__title">Lalish</h3>
+                    <p class="destination__desc">
+                      A spiritual sanctuary and architectural icon—quiet, profound, and respectfully experienced.
+                    </p>
+                    <dl class="destination__meta">
+                      <div>
+                        <dt><i class="fa-solid fa-heart" aria-hidden="true"></i> Best For</dt>
+                        <dd>Heritage, reflection, architecture</dd>
+                      </div>
+                      <div>
+                        <dt><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Note</dt>
+                        <dd>Respect local customs</dd>
+                      </div>
+                    </dl>
+                    <div class="destination__actions">
+                      <a class="mini-cta" href="#about" data-scroll-to="about">
+                        Learn context
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                      <button class="mini-cta mini-cta--ghost" type="button" data-action="openPlanner">
+                        Add to plan
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Slide 5 -->
+                <article class="slide destination" data-category="nature city" data-title="Duhok" tabindex="-1">
+                  <div class="destination__media" aria-hidden="true">
+                    <img src="images/dest-duhok.jpg" alt="" loading="lazy" />
+                    <div class="destination__shade"></div>
+                    <div class="destination__badge destination__badge--gold">
+                      <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+                      Scenic
+                    </div>
+                  </div>
+                  <div class="destination__content">
+                    <h3 class="destination__title">Duhok</h3>
+                    <p class="destination__desc">
+                      A gateway city with natural escapes—lakes, hills, and an energetic pace with nearby beauty.
+                    </p>
+                    <dl class="destination__meta">
+                      <div>
+                        <dt><i class="fa-solid fa-water" aria-hidden="true"></i> Best For</dt>
+                        <dd>Lakes, parks, easy excursions</dd>
+                      </div>
+                      <div>
+                        <dt><i class="fa-solid fa-shop" aria-hidden="true"></i> Also</dt>
+                        <dd>Markets and local food</dd>
+                      </div>
+                    </dl>
+                    <div class="destination__actions">
+                      <a class="mini-cta" href="#news" data-scroll-to="news">
+                        Travel tips
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                      <button class="mini-cta mini-cta--ghost" type="button" data-action="openWeatherPanel">
+                        Check weather
+                        <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="slider__progress" aria-hidden="true">
+              <div class="slider__bar" id="destinationsProgress"></div>
+            </div>
+
+            <div class="slider__hint" aria-hidden="true">
+              <i class="fa-solid fa-hand-pointer" aria-hidden="true"></i>
+              Drag • Scroll • Use arrows
+            </div>
+          </div>
+
+          <!-- Explore Feature Grid -->
+          <div class="explore__grid">
+            <article class="feature-card glass-card reveal" data-reveal="fade-up">
+              <header class="feature-card__header">
+                <div class="feature-card__icon" aria-hidden="true"><i class="fa-solid fa-umbrella-beach"></i></div>
+                <h3 class="feature-card__title">Seasonal Travel</h3>
+              </header>
+              <p class="feature-card__text">
+                The layout is designed for season-based recommendations, linking weather context to experiences:
+                spring valleys, summer nights, autumn colors, and winter peaks—delivered with luxury styling.
+              </p>
+              <a class="mini-link" href="#news">
+                Read seasonal guides
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+
+            <article class="feature-card glass-card reveal" data-reveal="fade-up" data-delay="0.06">
+              <header class="feature-card__header">
+                <div class="feature-card__icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
+                <h3 class="feature-card__title">Hospitality</h3>
+              </header>
+              <p class="feature-card__text">
+                Built for storytelling: boutique stays, modern cafés, artisan markets, and cultural events.
+                Future modules can include booking links, map integrations, and verified vendor badges.
+              </p>
+              <a class="mini-link" href="#contact">
+                Partner inquiries
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+
+            <article class="feature-card glass-card reveal" data-reveal="fade-up" data-delay="0.12">
+              <header class="feature-card__header">
+                <div class="feature-card__icon" aria-hidden="true"><i class="fa-solid fa-shield-heart"></i></div>
+                <h3 class="feature-card__title">Travel Etiquette</h3>
+              </header>
+              <p class="feature-card__text">
+                A premium, respectful guide style: local customs, photography etiquette, sacred site guidance,
+                and language tips—structured with expandable sections and accessible UI patterns.
+              </p>
+              <a class="mini-link" href="#about">
+                Read cultural notes
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section section--gallery" id="gallery" aria-label="Gallery">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal="fade-up">
+            <span class="eyebrow__line"></span>
+            Gallery
+          </p>
+          <h2 class="section__title reveal" data-reveal="fade-up" data-delay="0.06">
+            Immersive Scenes with Luxury Hover Effects
+          </h2>
+          <p class="section__subtitle reveal" data-reveal="fade-up" data-delay="0.10">
+            A grid built for dramatic hover interactions, parallax illusions, and modal viewing. Your upcoming JS will add sliders, keyboard navigation, and image focus transitions.
+          </p>
+        </header>
+
+        <div class="gallery">
+          <div class="gallery__grid" aria-label="Gallery grid">
+            <!-- Each figure includes overlay, tags, and actions. CSS will handle hover + glass -->
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-category="heritage" data-title="Citadel View">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: Citadel View" data-gallery-open="0">
+                <img src="images/gallery-01.jpg" alt="A cinematic view of a historic citadel at golden hour." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-chess-rook" aria-hidden="true"></i>
+                    Heritage
+                  </span>
+                  <span class="gallery-card__title">Citadel View</span>
+                  <span class="gallery-card__meta">Golden hour • Architectural textures</span>
+                </figcaption>
+              </button>
+            </figure>
+
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-delay="0.04" data-category="nature" data-title="Mountain Ridges">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: Mountain Ridges" data-gallery-open="1">
+                <img src="images/gallery-02.jpg" alt="Mountain ridges with layered mist and sunrise light." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+                    Nature
+                  </span>
+                  <span class="gallery-card__title">Mountain Ridges</span>
+                  <span class="gallery-card__meta">Alpine air • Scenic routes</span>
+                </figcaption>
+              </button>
+            </figure>
+
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-delay="0.08" data-category="culture" data-title="Textiles & Craft">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: Textiles & Craft" data-gallery-open="2">
+                <img src="images/gallery-03.jpg" alt="Traditional textiles and artisan craft details in a market setting." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-shirt" aria-hidden="true"></i>
+                    Culture
+                  </span>
+                  <span class="gallery-card__title">Textiles & Craft</span>
+                  <span class="gallery-card__meta">Artisan detail • Market colors</span>
+                </figcaption>
+              </button>
+            </figure>
+
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-delay="0.12" data-category="city" data-title="City Nights">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: City Nights" data-gallery-open="3">
+                <img src="images/gallery-04.jpg" alt="A modern city skyline at night with warm lights and reflections." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-city" aria-hidden="true"></i>
+                    City
+                  </span>
+                  <span class="gallery-card__title">City Nights</span>
+                  <span class="gallery-card__meta">Modern energy • Evening strolls</span>
+                </figcaption>
+              </button>
+            </figure>
+
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-delay="0.16" data-category="heritage" data-title="Sacred Architecture">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: Sacred Architecture" data-gallery-open="4">
+                <img src="images/gallery-05.jpg" alt="Sacred architectural domes and serene courtyard ambience." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-place-of-worship" aria-hidden="true"></i>
+                    Heritage
+                  </span>
+                  <span class="gallery-card__title">Sacred Architecture</span>
+                  <span class="gallery-card__meta">Respectful travel • Quiet beauty</span>
+                </figcaption>
+              </button>
+            </figure>
+
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-delay="0.20" data-category="food" data-title="Cuisine & Markets">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: Cuisine & Markets" data-gallery-open="5">
+                <img src="images/gallery-06.jpg" alt="Local cuisine and market spices presented in a vibrant arrangement." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                    Cuisine
+                  </span>
+                  <span class="gallery-card__title">Cuisine & Markets</span>
+                  <span class="gallery-card__meta">Flavors • Street scenes</span>
+                </figcaption>
+              </button>
+            </figure>
+
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-delay="0.24" data-category="nature" data-title="Water & Valleys">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: Water & Valleys" data-gallery-open="6">
+                <img src="images/gallery-07.jpg" alt="A valley landscape with flowing water and layered cliffs." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-water" aria-hidden="true"></i>
+                    Nature
+                  </span>
+                  <span class="gallery-card__title">Water & Valleys</span>
+                  <span class="gallery-card__meta">Panoramic • Calm routes</span>
+                </figcaption>
+              </button>
+            </figure>
+
+            <figure class="gallery-card reveal" data-reveal="fade-up" data-delay="0.28" data-category="culture" data-title="Festival Moments">
+              <button class="gallery-card__btn" type="button" aria-label="Open image: Festival Moments" data-gallery-open="7">
+                <img src="images/gallery-08.jpg" alt="A cultural celebration scene with dancing and vibrant colors." loading="lazy" />
+                <span class="gallery-card__overlay" aria-hidden="true"></span>
+                <span class="gallery-card__shine" aria-hidden="true"></span>
+                <figcaption class="gallery-card__caption">
+                  <span class="gallery-card__tag">
+                    <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+                    Culture
+                  </span>
+                  <span class="gallery-card__title">Festival Moments</span>
+                  <span class="gallery-card__meta">Dance • Music • Community</span>
+                </figcaption>
+              </button>
+            </figure>
+          </div>
+
+          <!-- Gallery controls / filters -->
+          <div class="gallery__bar reveal" data-reveal="fade-up" aria-label="Gallery controls">
+            <div class="gallery__filters" role="group" aria-label="Gallery category filters">
+              <button class="chip chip--active" type="button" data-gallery-filter="all" aria-pressed="true">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                All
+              </button>
+              <button class="chip" type="button" data-gallery-filter="heritage" aria-pressed="false">
+                <i class="fa-solid fa-chess-rook" aria-hidden="true"></i>
+                Heritage
+              </button>
+              <button class="chip" type="button" data-gallery-filter="nature" aria-pressed="false">
+                <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+                Nature
+              </button>
+              <button class="chip" type="button" data-gallery-filter="culture" aria-pressed="false">
+                <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+                Culture
+              </button>
+              <button class="chip" type="button" data-gallery-filter="city" aria-pressed="false">
+                <i class="fa-solid fa-city" aria-hidden="true"></i>
+                City
+              </button>
+              <button class="chip" type="button" data-gallery-filter="food" aria-pressed="false">
+                <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                Cuisine
+              </button>
+            </div>
+
+            <div class="gallery__actions" aria-label="Gallery actions">
+              <button class="icon-btn icon-btn--ring" type="button" id="galleryShuffle" aria-label="Shuffle gallery">
+                <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn icon-btn--ring" type="button" id="galleryViewToggle" aria-label="Toggle gallery view">
+                <i class="fa-solid fa-grip" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Modal (JS will wire interactions) -->
+      <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel" role="document">
+          <header class="modal__header">
+            <h3 class="modal__title" id="modalTitle">Image Title</h3>
+            <div class="modal__tools">
+              <button class="icon-btn" type="button" aria-label="Previous image" data-modal-prev>
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" type="button" aria-label="Next image" data-modal-next>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" type="button" aria-label="Close viewer" data-modal-close>
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+          </header>
+
+          <div class="modal__body">
+            <div class="modal__image-wrap">
+              <img id="modalImage" src="images/gallery-01.jpg" alt="Selected gallery image" />
+              <div class="modal__gradient" aria-hidden="true"></div>
+            </div>
+
+            <div class="modal__meta">
+              <p class="modal__desc" id="modalDesc">
+                A premium caption area for context, photography notes, cultural insights, and travel etiquette tips.
+              </p>
+
+              <div class="modal__chips" id="modalChips" aria-label="Tags">
+                <span class="pill"><i class="fa-solid fa-gem" aria-hidden="true"></i> Luxury</span>
+                <span class="pill"><i class="fa-solid fa-camera" aria-hidden="true"></i> Editorial</span>
+                <span class="pill"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Motion</span>
+              </div>
+
+              <div class="modal__actions">
+                <button class="cta-btn cta-btn--gold" type="button" id="modalAddToPlan">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                  <span>Add to itinerary</span>
+                </button>
+                <button class="cta-btn cta-btn--glass" type="button" id="modalCopyLink">
+                  <i class="fa-solid fa-link" aria-hidden="true"></i>
+                  <span>Copy link</span>
+                </button>
+              </div>
+
+              <div class="modal__fineprint">
+                <small class="muted">
+                  Accessibility note: the modal is designed for keyboard navigation, focus trapping, and ARIA-friendly updates via JS.
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <footer class="modal__footer" aria-label="Image viewer footer">
+            <div class="modal__progress" aria-hidden="true">
+              <span class="modal__progress-bar" id="modalProgress"></span>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG / NEWS -->
+    <section class="section section--news" id="news" aria-label="Blog and news">
+      <div class="container">
+        <header class="section__header section__header--split">
+          <div class="section__header-left">
+            <p class="section__eyebrow reveal" data-reveal="fade-up">
+              <span class="eyebrow__line"></span>
+              Blog / News
+            </p>
+            <h2 class="section__title reveal" data-reveal="fade-up" data-delay="0.06">
+              Editorial Stories, Guides, and Cultural Notes
+            </h2>
+          </div>
+          <div class="section__header-right reveal" data-reveal="fade-up" data-delay="0.10">
+            <p class="section__subtitle">
+              Designed for a modern newsroom layout: featured story, curated cards, category filters, and readable article previews.
+              Your upcoming JS can power pagination, filtering, and animated transitions.
+            </p>
+          </div>
+        </header>
+
+        <div class="news">
+          <div class="news__featured reveal" data-reveal="fade-up" aria-label="Featured story">
+            <article class="featured-story glass-card">
+              <div class="featured-story__media" aria-hidden="true">
+                <img src="images/news-featured.jpg" alt="" loading="lazy" />
+                <div class="featured-story__shade"></div>
+                <div class="featured-story__label">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  Featured
+                </div>
+              </div>
+              <div class="featured-story__content">
+                <div class="featured-story__meta">
+                  <span class="meta-pill">
+                    <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+                    Travel Guide
+                  </span>
+                  <span class="meta-sep" aria-hidden="true">•</span>
+                  <time datetime="2026-02-12" class="muted">February 12, 2026</time>
+                  <span class="meta-sep" aria-hidden="true">•</span>
+                  <span class="muted">8 min read</span>
+                </div>
+
+                <h3 class="featured-story__title">
+                  A Luxury Weekend: Markets, Heritage, and Mountain Air
+                </h3>
+
+                <p class="featured-story__excerpt">
+                  A premium itinerary concept: sunrise heritage walks, artisan markets, boutique cafés, and a scenic escape to mountain viewpoints—
+                  structured for smooth reading, elegant typography, and cinematic transitions.
+                </p>
+
+                <div class="featured-story__actions">
+                  <button class="cta-btn cta-btn--gold" type="button" data-article-open="featured">
+                    <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    <span>Read Article</span>
+                  </button>
+                  <button class="cta-btn cta-btn--glass" type="button" data-action="openPlanner">
+                    <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                    <span>Use in Itinerary</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="news__toolbar reveal" data-reveal="fade-up" aria-label="News filters">
+            <div class="news__filters" role="group" aria-label="News categories">
+              <button class="filter-btn is-active" type="button" data-news-filter="all" aria-pressed="true">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                <span>All</span>
+              </button>
+              <button class="filter-btn" type="button" data-news-filter="tourism" aria-pressed="false">
+                <i class="fa-solid fa-route" aria-hidden="true"></i>
+                <span>Tourism</span>
+              </button>
+              <button class="filter-btn" type="button" data-news-filter="history" aria-pressed="false">
+                <i class="fa-solid fa-scroll" aria-hidden="true"></i>
+                <span>History</span>
+              </button>
+              <button class="filter-btn" type="button" data-news-filter="culture" aria-pressed="false">
+                <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+                <span>Culture</span>
+              </button>
+              <button class="filter-btn" type="button" data-news-filter="food" aria-pressed="false">
+                <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                <span>Cuisine</span>
+              </button>
+              <button class="filter-btn" type="button" data-news-filter="nature" aria-pressed="false">
+                <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+                <span>Nature</span>
+              </button>
+            </div>
+
+            <div class="news__search">
+              <label class="sr-only" for="newsSearch">Search articles</label>
+              <input class="news__search-input" id="newsSearch" type="search" placeholder="Search articles..." />
+              <button class="news__search-btn" type="button" aria-label="Search news">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="news__grid" aria-label="Article cards">
+            <article class="news-card glass-card reveal" data-reveal="fade-up" data-news="tourism nature">
+              <header class="news-card__header">
+                <span class="news-card__badge">
+                  <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+                  Nature
+                </span>
+                <time datetime="2026-02-10" class="news-card__time">Feb 10, 2026</time>
+              </header>
+
+              <h3 class="news-card__title">Scenic Routes and Viewpoints</h3>
+              <p class="news-card__excerpt">
+                A modern guide layout for mountain drives and short hikes—built for expandable sections, safety notes, and photo tips.
+              </p>
+
+              <div class="news-card__footer">
+                <span class="news-card__meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 min read</span>
+                <button class="mini-cta" type="button" data-article-open="routes">
+                  Read
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+
+            <article class="news-card glass-card reveal" data-reveal="fade-up" data-delay="0.04" data-news="history heritage">
+              <header class="news-card__header">
+                <span class="news-card__badge">
+                  <i class="fa-solid fa-scroll" aria-hidden="true"></i>
+                  History
+                </span>
+                <time datetime="2026-02-08" class="news-card__time">Feb 8, 2026</time>
+              </header>
+
+              <h3 class="news-card__title">A Short Primer on Heritage Sites</h3>
+              <p class="news-card__excerpt">
+                A premium editorial card designed to expand into a full guide: heritage etiquette, museum routes, and architectural notes.
+              </p>
+
+              <div class="news-card__footer">
+                <span class="news-card__meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 min read</span>
+                <button class="mini-cta" type="button" data-article-open="heritage">
+                  Read
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+
+            <article class="news-card glass-card reveal" data-reveal="fade-up" data-delay="0.08" data-news="culture food">
+              <header class="news-card__header">
+                <span class="news-card__badge">
+                  <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                  Cuisine
+                </span>
+                <time datetime="2026-02-06" class="news-card__time">Feb 6, 2026</time>
+              </header>
+
+              <h3 class="news-card__title">Markets, Flavors, and Street Scenes</h3>
+              <p class="news-card__excerpt">
+                From spice stalls to bakery scents—this layout is built for lists, tasting notes, and map-ready market routes.
+              </p>
+
+              <div class="news-card__footer">
+                <span class="news-card__meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 min read</span>
+                <button class="mini-cta" type="button" data-article-open="cuisine">
+                  Read
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+
+            <article class="news-card glass-card reveal" data-reveal="fade-up" data-delay="0.12" data-news="culture">
+              <header class="news-card__header">
+                <span class="news-card__badge">
+                  <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+                  Culture
+                </span>
+                <time datetime="2026-02-04" class="news-card__time">Feb 4, 2026</time>
+              </header>
+
+              <h3 class="news-card__title">Festivals & Contemporary Arts</h3>
+              <p class="news-card__excerpt">
+                A premium story block designed for event calendars, artist profiles, and multimedia—animated on scroll for modern impact.
+              </p>
+
+              <div class="news-card__footer">
+                <span class="news-card__meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> 9 min read</span>
+                <button class="mini-cta" type="button" data-article-open="festivals">
+                  Read
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+
+            <article class="news-card glass-card reveal" data-reveal="fade-up" data-delay="0.16" data-news="tourism">
+              <header class="news-card__header">
+                <span class="news-card__badge">
+                  <i class="fa-solid fa-route" aria-hidden="true"></i>
+                  Tourism
+                </span>
+                <time datetime="2026-02-02" class="news-card__time">Feb 2, 2026</time>
+              </header>
+
+              <h3 class="news-card__title">Boutique Stays & City Itineraries</h3>
+              <p class="news-card__excerpt">
+                Structured for verified partner listings, neighborhood guides, and day-by-day plans—presented with luxury typography.
+              </p>
+
+              <div class="news-card__footer">
+                <span class="news-card__meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 min read</span>
+                <button class="mini-cta" type="button" data-article-open="stays">
+                  Read
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+
+            <article class="news-card glass-card reveal" data-reveal="fade-up" data-delay="0.20" data-news="nature tourism">
+              <header class="news-card__header">
+                <span class="news-card__badge">
+                  <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+                  Weather
+                </span>
+                <time datetime="2026-01-30" class="news-card__time">Jan 30, 2026</time>
+              </header>
+
+              <h3 class="news-card__title">When to Visit: Season-by-Season</h3>
+              <p class="news-card__excerpt">
+                A high-end seasonal guide scaffold designed to connect with the weather widget and recommend experiences per month.
+              </p>
+
+              <div class="news-card__footer">
+                <span class="news-card__meta"><i class="fa-regular fa-clock" aria-hidden="true"></i> 10 min read</span>
+                <button class="mini-cta" type="button" data-article-open="seasons">
+                  Read
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="news__pagination reveal" data-reveal="fade-up" aria-label="Pagination">
+            <button class="pill-btn pill-btn--ghost" type="button" disabled aria-disabled="true">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              <span>Prev</span>
+            </button>
+            <span class="news__page" aria-label="Current page">Page <strong>1</strong> of <strong>12</strong></span>
+            <button class="pill-btn" type="button">
+              <span>Next</span>
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article Modal (JS will inject content) -->
+      <div class="modal" id="articleModal" role="dialog" aria-modal="true" aria-label="Article reader" hidden>
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel modal__panel--article" role="document">
+          <header class="modal__header">
+            <h3 class="modal__title" id="articleTitle">Article Title</h3>
+            <div class="modal__tools">
+              <button class="icon-btn" type="button" aria-label="Increase text size" id="textSizeUp">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" type="button" aria-label="Decrease text size" id="textSizeDown">
+                <i class="fa-solid fa-minus" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" type="button" aria-label="Close article" data-modal-close>
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+          </header>
+
+          <div class="modal__body modal__body--article">
+            <article class="reader" id="articleBody">
+              <!-- JS will render a premium article layout: lead, sections, callouts, pullquotes -->
+              <div class="reader__placeholder">
+                <p class="muted">
+                  Article content will be dynamically injected by <code>script.js</code> for a newsroom experience.
+                </p>
+                <div class="reader__skeleton">
+                  <div class="skeleton line"></div>
+                  <div class="skeleton line"></div>
+                  <div class="skeleton line"></div>
+                  <div class="skeleton line short"></div>
+                  <div class="skeleton line"></div>
+                  <div class="skeleton line"></div>
+                  <div class="skeleton line short"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <footer class="modal__footer modal__footer--article">
+            <button class="cta-btn cta-btn--gold" type="button" data-action="openPlanner">
+              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+              <span>Use in Itinerary</span>
+            </button>
+            <button class="cta-btn cta-btn--glass" type="button" id="articleShare">
+              <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+              <span>Share</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--contact" id="contact" aria-label="Contact">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal="fade-up">
+            <span class="eyebrow__line"></span>
+            Contact
+          </p>
+          <h2 class="section__title reveal" data-reveal="fade-up" data-delay="0.06">
+            Collaborations, Media, and Cultural Partnerships
+          </h2>
+          <p class="section__subtitle reveal" data-reveal="fade-up" data-delay="0.10">
+            This section is built for a professional tourism/culture organization style: press inquiries, partner onboarding, and visitor questions—presented with luxury glassmorphism and clarity.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-card glass-card reveal" data-reveal="fade-up" aria-label="Contact form">
+            <h3 class="contact-card__title">Send a Message</h3>
+            <p class="contact-card__text">
+              Use this form as a front-end foundation. Your future backend can route messages to email, CRM, or ticketing.
+            </p>
+
+            <form class="form" id="contactForm">
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="name">Full Name</label>
+                  <input class="field__input" id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label class="field__label" for="email">Email</label>
+                  <input class="field__input" id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="topic">Topic</label>
+                  <select class="field__select" id="topic" name="topic" required>
+                    <option value="" selected disabled>Select a topic</option>
+                    <option value="tourism">Tourism Information</option>
+                    <option value="media">Media / Press</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="events">Cultural Events</option>
+                    <option value="feedback">Website Feedback</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="budget">Project Scale</label>
+                  <select class="field__select" id="budget" name="budget">
+                    <option value="info" selected>Information Only</option>
+                    <option value="small">Small Collaboration</option>
+                    <option value="medium">Medium Partnership</option>
+                    <option value="large">Large Campaign</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="message">Message</label>
+                <textarea class="field__textarea" id="message" name="message" rows="6" placeholder="Write your message with details..." required></textarea>
+              </div>
+
+              <div class="form__checks" aria-label="Consent">
+                <label class="check">
+                  <input type="checkbox" name="consent" required />
+                  <span>I agree that this message may be used to respond to my inquiry.</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="updates" />
+                  <span>Send me occasional travel and cultural updates (optional).</span>
+                </label>
+              </div>
+
+              <div class="form__actions">
+                <button class="cta-btn cta-btn--gold" type="submit">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  <span>Send Message</span>
+                </button>
+                <button class="cta-btn cta-btn--glass" type="reset">
+                  <i class="fa-solid fa-eraser" aria-hidden="true"></i>
+                  <span>Clear</span>
+                </button>
+              </div>
+
+              <div class="form__status" id="contactStatus" aria-live="polite">
+                <!-- JS can write success/error messages here -->
+              </div>
+            </form>
+          </div>
+
+          <aside class="contact-aside reveal" data-reveal="fade-left" aria-label="Contact details">
+            <div class="glass-card contact-info">
+              <h3 class="contact-info__title">Official-Style Details</h3>
+              <p class="contact-info__text">
+                Replace placeholders with your real organization info. The UI is designed for luxury clarity and professional trust.
+              </p>
+
+              <dl class="contact-info__list">
+                <div class="contact-info__item">
+                  <dt><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Office</dt>
+                  <dd>Erbil — Kurdistan Region</dd>
+                </div>
+                <div class="contact-info__item">
+                  <dt><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</dt>
+                  <dd><a href="mailto:info@example.com">info@example.com</a></dd>
+                </div>
+                <div class="contact-info__item">
+                  <dt><i class="fa-solid fa-phone" aria-hidden="true"></i> Phone</dt>
+                  <dd><a href="tel:+964000000000">+964 000 000 000</a></dd>
+                </div>
+                <div class="contact-info__item">
+                  <dt><i class="fa-regular fa-clock" aria-hidden="true"></i> Hours</dt>
+                  <dd>Sun–Thu • 9:00–17:00</dd>
+                </div>
+              </dl>
+
+              <div class="contact-info__social" aria-label="Social links">
+                <a class="social-btn" href="#" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a class="social-btn" href="#" aria-label="YouTube">
+                  <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+                <a class="social-btn" href="#" aria-label="X / Twitter">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a class="social-btn" href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+              </div>
+
+              <div class="contact-info__note">
+                <small class="muted">
+                  Accessibility note: links include labels; form fields are properly associated. Upcoming JS can add validation, animations, and spam protection.
+                </small>
+              </div>
+            </div>
+
+            <div class="glass-card contact-callout reveal" data-reveal="fade-up" aria-label="Callout">
+              <h4 class="contact-callout__title">
+                <i class="fa-solid fa-gem" aria-hidden="true"></i>
+                Premium Implementation Path
+              </h4>
+              <p class="contact-callout__text">
+                After HTML approval, the CSS will deliver luxury palette (gold, deep green, refined red), glassmorphism layers, animated accents, and custom scrollbars.
+                Then JS will add smooth scrolling, IntersectionObserver reveals, weather fetch + caching, and interactive sliders.
+              </p>
+              <a class="mini-cta" href="#home">
+                Back to top
+                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo" aria-label="Footer">
+    <div class="container footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="#home" aria-label="Back to home">
+            <span class="brand__mark" aria-hidden="true">
+              <span class="brand__ring"></span>
+              <span class="brand__monogram">K</span>
+            </span>
+            <span class="brand__text">
+              <span class="brand__title">Kurdistan</span>
+              <span class="brand__subtitle">Tourism • History • Culture</span>
+            </span>
+          </a>
+
+          <p class="footer__desc">
+            A luxury front-end concept designed to scale into a full tourism and culture platform: editorial content, interactive media, smart planning tools, and refined motion.
+          </p>
+
+          <div class="footer__badges" aria-label="Quality badges">
+            <span class="meta-pill"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Accessible</span>
+            <span class="meta-pill"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Motion</span>
+            <span class="meta-pill"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Responsive</span>
+          </div>
+        </div>
+
+        <div class="footer__cols" aria-label="Footer navigation columns">
+          <div class="footer__col">
+            <h3 class="footer__title">Explore</h3>
+            <ul class="footer__links">
+              <li><a href="#explore">Destinations</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#news">News</a></li>
+              <li><button class="link-btn" type="button" data-action="openWeatherPanel">Weather</button></li>
+              <li><button class="link-btn" type="button" data-action="openPlanner">Itinerary</button></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__title">Culture</h3>
+            <ul class="footer__links">
+              <li><a href="#about">Heritage</a></li>
+              <li><a href="#about">Arts & Festivals</a></li>
+              <li><a href="#news">Editorial Stories</a></li>
+              <li><a href="#contact">Partnerships</a></li>
+              <li><a href="#contact">Media</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__title">Get Updates</h3>
+            <p class="footer__text">
+              A premium newsletter box (front-end). Your backend can connect this to your mailing provider.
+            </p>
+
+            <form class="newsletter" id="newsletterForm">
+              <label class="sr-only" for="newsletterEmail">Email</label>
+              <input class="newsletter__input" id="newsletterEmail" type="email" placeholder="you@example.com" autocomplete="email" required />
+              <button class="newsletter__btn" type="submit" aria-label="Subscribe">
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+              <p class="newsletter__status" id="newsletterStatus" aria-live="polite"></p>
+            </form>
+
+            <div class="footer__social" aria-label="Social links">
+              <a class="social-btn" href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a class="social-btn" href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a class="social-btn" href="#" aria-label="X / Twitter">
+                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+              </a>
+              <a class="social-btn" href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__legal">
+          <small>© <span id="year">2026</span> Kurdistan Tourism & Culture Studio. All rights reserved.</small>
+          <span class="footer__sep" aria-hidden="true">•</span>
+          <a href="#" class="footer__legal-link">Privacy</a>
+          <span class="footer__sep" aria-hidden="true">•</span>
+          <a href="#" class="footer__legal-link">Terms</a>
+          <span class="footer__sep" aria-hidden="true">•</span>
+          <a href="#" class="footer__legal-link">Accessibility</a>
+        </div>
+
+        <button class="to-top" type="button" id="toTop" aria-label="Back to top">
+          <span class="to-top__text">Top</span>
+          <span class="to-top__icon" aria-hidden="true">
+            <i class="fa-solid fa-arrow-up"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NoScript message -->
+  <noscript>
+    <div class="noscript">
+      <div class="noscript__inner">
+        <strong>JavaScript is disabled.</strong>
+        <p>
+          This site uses JavaScript for smooth scrolling, reveal animations, weather, and interactive sliders. You can still browse the content, but interactive features will be limited.
+        </p>
+      </div>
+    </div>
+  </noscript>
+</body>
 </html>
