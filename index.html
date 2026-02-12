@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshBasket | Fruit E-Commerce</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <h1 class="logo">FreshBasket</h1>
+        <ul class="nav-links">
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#benefits">Why Us</a></li>
+          <li><a href="#deals">Deals</a></li>
+        </ul>
+        <button id="cart-button" aria-label="Open shopping cart">
+          🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+      </nav>
+
+      <section class="hero container">
+        <div>
+          <p class="tag">Farm-fresh delivery in 24 hours</p>
+          <h2>Juicy fruits from trusted growers, delivered to your door.</h2>
+          <p>
+            Shop handpicked apples, mangoes, berries, citrus, and tropical favorites.
+          </p>
+          <a class="cta" href="#shop">Shop Fruits</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=900&q=80"
+          alt="Assorted fresh fruits"
+        />
+      </section>
+    </header>
+
+    <main>
+      <section id="benefits" class="benefits container">
+        <article>
+          <h3>100% Fresh Guarantee</h3>
+          <p>Picked at peak ripeness and quality-checked before shipping.</p>
+        </article>
+        <article>
+          <h3>Eco-Friendly Packaging</h3>
+          <p>Plastic-free boxes and insulated wraps for sustainable delivery.</p>
+        </article>
+        <article>
+          <h3>Flexible Subscriptions</h3>
+          <p>Weekly or monthly fruit boxes tailored to your taste.</p>
+        </article>
+      </section>
+
+      <section id="shop" class="container">
+        <div class="section-title">
+          <h2>Top Fruits</h2>
+          <p>Popular picks this week.</p>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+      </section>
+
+      <section id="deals" class="deals container">
+        <h2>Today’s Deal</h2>
+        <p>Get 15% off orders over $40 with code <strong>FRUIT15</strong>.</p>
+      </section>
+    </main>
+
+    <aside id="cart-panel" class="cart-panel" aria-live="polite">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="close-cart" aria-label="Close cart">✕</button>
+      </div>
+      <ul id="cart-items"></ul>
+      <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
+      <button class="checkout">Checkout</button>
+    </aside>
+
+    <footer>
+      <p>© 2026 FreshBasket. Sweetness delivered daily.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
